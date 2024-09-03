@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.10">
+  <diagram name="第 1 页" id="HKVt_k5tH0fLXsPrs9A6">
+    <mxGraphModel dx="1222" dy="886" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jBnZAekhUY2tLa8E34gz-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jBnZAekhUY2tLa8E34gz-1" target="jBnZAekhUY2tLa8E34gz-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-1" value="LLM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="466" y="246" width="54" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jBnZAekhUY2tLa8E34gz-19" target="jBnZAekhUY2tLa8E34gz-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-19" value="我喜歡吃" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry x="358" y="250" width="73" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="jBnZAekhUY2tLa8E34gz-21" target="jBnZAekhUY2tLa8E34gz-28" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="573" y="299" />
+              <mxPoint x="389" y="299" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-21" value="蘋" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry x="556" y="250" width="33" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jBnZAekhUY2tLa8E34gz-26" target="jBnZAekhUY2tLa8E34gz-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-26" value="LLM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="466" y="318" width="54" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jBnZAekhUY2tLa8E34gz-28" target="jBnZAekhUY2tLa8E34gz-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-28" value="我喜歡吃蘋" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry x="347" y="322" width="84" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="jBnZAekhUY2tLa8E34gz-29" target="jBnZAekhUY2tLa8E34gz-33" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="573" y="370" />
+              <mxPoint x="389" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-29" value="果" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry x="556" y="322" width="33" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jBnZAekhUY2tLa8E34gz-31" target="jBnZAekhUY2tLa8E34gz-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-31" value="LLM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="466" y="389" width="54" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jBnZAekhUY2tLa8E34gz-33" target="jBnZAekhUY2tLa8E34gz-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-33" value="我喜歡吃蘋果" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry x="347" y="393" width="84" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-34" value="END" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#b85450;fillColor=#f8cecc;" parent="1" vertex="1">
+          <mxGeometry x="556" y="393" width="33" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jBnZAekhUY2tLa8E34gz-36" target="jBnZAekhUY2tLa8E34gz-39" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-36" value="LLM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="466" y="177" width="54" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jBnZAekhUY2tLa8E34gz-38" target="jBnZAekhUY2tLa8E34gz-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-38" value="我喜歡" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry x="358" y="181" width="73" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="jBnZAekhUY2tLa8E34gz-39" target="jBnZAekhUY2tLa8E34gz-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="572" y="230" />
+              <mxPoint x="394" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-39" value="吃" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry x="556" y="181" width="33" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jBnZAekhUY2tLa8E34gz-43" target="jBnZAekhUY2tLa8E34gz-38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jBnZAekhUY2tLa8E34gz-43" value="使用者輸入" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="259" y="175" width="73" height="42" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,10 @@
+__pycache__/
+.env
+
+# ignore images
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+
