@@ -1,3 +1,4 @@
+# 檔名為 openai-test.py
 # 使用 openai 的 API 來生成文本
 import openai
 from dotenv import load_dotenv # 載入 dotenv 套件
