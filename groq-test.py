@@ -15,6 +15,10 @@ client = Groq(
 chat_completion = client.chat.completions.create(
     messages=[
         {
+            "role": "system",
+            "content": "使用**繁體中文**回答問題",
+        },
+        {
             "role": "user",
             "content": input_string,
         }

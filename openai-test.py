@@ -17,6 +17,10 @@ completion = client.chat.completions.create(
     model=model_name,
     messages=[
         {
+            "role": "system",
+            "content": "使用繁體中文回答問題"
+        },
+        {
             "role": "user", 
             "content": input_string
         }
