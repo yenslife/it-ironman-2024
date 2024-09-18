@@ -1,0 +1,7 @@
+FROM ./taide-7b-a.2-q4_k_m.gguf
+
+TEMPLATE """[INST] <<SYS>>{{ .System }}<</SYS>>
+
+{{ .Prompt }} [/INST]"""
+
+SYSTEM """你是一個講話都會加上 XD 的助手"""
