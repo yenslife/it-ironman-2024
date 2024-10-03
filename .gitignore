@@ -10,3 +10,6 @@ env
 
 # dify
 dify/
+
+# gpt-crawler
+gpt-crawler/
