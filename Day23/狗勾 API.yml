@@ -1,0 +1,1161 @@
+app:
+  description: Dog CEO API
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 狗勾 API
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.2
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1727965020913-source-1727971750540-target
+      source: '1727965020913'
+      sourceHandle: source
+      target: '1727971750540'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 1727971750540-source-1727974637433-target
+      source: '1727971750540'
+      sourceHandle: source
+      target: '1727974637433'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1727974637433-source-1727975793877-target
+      source: '1727974637433'
+      sourceHandle: source
+      target: '1727975793877'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        iteration_id: '1727976152918'
+        sourceType: iteration-start
+        targetType: code
+      id: 1727976152918start-source-1727976192514-target
+      source: 1727976152918start
+      sourceHandle: source
+      target: '1727976192514'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        iteration_id: '1727976152918'
+        sourceType: code
+        targetType: http-request
+      id: 1727976192514-source-1727976183028-target
+      source: '1727976192514'
+      sourceHandle: source
+      target: '1727976183028'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        iteration_id: '1727976152918'
+        sourceType: http-request
+        targetType: code
+      id: 1727976183028-source-1727976571243-target
+      source: '1727976183028'
+      sourceHandle: source
+      target: '1727976571243'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: if-else
+      id: 1727975793877-source-1727976883851-target
+      source: '1727975793877'
+      sourceHandle: source
+      target: '1727976883851'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: iteration
+      id: 1727976883851-true-1727976152918-target
+      source: '1727976883851'
+      sourceHandle: 'true'
+      target: '1727976152918'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: code
+      id: 1727976883851-false-1727977038273-target
+      source: '1727976883851'
+      sourceHandle: 'false'
+      target: '1727977038273'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1727977038273-source-1727977349441-target
+      source: '1727977038273'
+      sourceHandle: source
+      target: '1727977349441'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: variable-aggregator
+        targetType: end
+      id: 1727977349441-source-1727972270385-target
+      source: '1727977349441'
+      sourceHandle: source
+      target: '1727972270385'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: iteration
+        targetType: variable-aggregator
+      id: 1727976152918-source-1727977349441-target
+      source: '1727976152918'
+      sourceHandle: source
+      target: '1727977349441'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 開始
+        type: start
+        variables:
+        - label: user_query
+          max_length: 1000
+          options: []
+          required: true
+          type: paragraph
+          variable: user_query
+      height: 90
+      id: '1727965020913'
+      position:
+        x: 30
+        y: 291
+      positionAbsolute:
+        x: 30
+        y: 291
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: ce8931a7-4712-40fc-815a-62a152fedc98
+          role: system
+          text: 'You are an expert in identifying dog breeds based on characteristics
+            described by users. Your task
+
+            is to analyze the following user query and determine the most likely dog
+            breed or breeds that match
+
+            the description.
+
+
+            <user_query>
+
+            {{#1727965020913.user_query#}}
+
+            </user_query>
+
+
+            Based on the characteristics described in the user query, identify the
+            most likely dog breed(s). If
+
+            multiple breeds match the description, list all possible breeds you think
+            are a good match. For each
+
+            breed you mention, include its English name in parentheses.
+
+
+            Provide your response in the following format:
+
+            <answer>
+
+            [Breed name in Chinese] ([English breed name])
+
+            [Additional breed names if applicable]
+
+            </answer>
+
+
+            Be concise and direct in your response. Do not include any additional
+            explanations or commentary
+
+            beyond the breed names.'
+        selected: false
+        title: 判斷狗品種
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 98
+      id: '1727971750540'
+      position:
+        x: 334
+        y: 291
+      positionAbsolute:
+        x: 334
+        y: 291
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1727977349441'
+          - output
+          variable: text
+        selected: false
+        title: 結束
+        type: end
+      height: 90
+      id: '1727972270385'
+      position:
+        x: 2547.5629839767644
+        y: 432.7892197114387
+      positionAbsolute:
+        x: 2547.5629839767644
+        y: 432.7892197114387
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini-2024-07-18
+          provider: openai
+        prompt_template:
+        - id: 6750fdff-2e33-4f1c-923e-289b0591b873
+          role: system
+          text: 'You are a dog breed identifier. Your task is to analyze the user''s
+            input text and identify any dog
+
+            breeds mentioned. You will then format your response according to specific
+            rules. Here''s how to
+
+            proceed:
+
+
+            First, here''s the dictionary of dog breeds and their sub-breeds:
+
+
+            <breed_dictionary>
+
+            {
+
+            "message": {
+
+            "affenpinscher": [],
+
+            "african": [],
+
+            "airedale": [],
+
+            "akita": [],
+
+            "appenzeller": [],
+
+            "australian": [
+
+            "kelpie",
+
+            "shepherd"
+
+            ],
+
+            "bakharwal": [
+
+            "indian"
+
+            ],
+
+            "basenji": [],
+
+            "beagle": [],
+
+            "bluetick": [],
+
+            "borzoi": [],
+
+            "bouvier": [],
+
+            "boxer": [],
+
+            "brabancon": [],
+
+            "briard": [],
+
+            "buhund": [
+
+            "norwegian"
+
+            ],
+
+            "bulldog": [
+
+            "boston",
+
+            "english",
+
+            "french"
+
+            ],
+
+            "bullterrier": [
+
+            "staffordshire"
+
+            ],
+
+            "cattledog": [
+
+            "australian"
+
+            ],
+
+            "cavapoo": [],
+
+            "chihuahua": [],
+
+            "chippiparai": [
+
+            "indian"
+
+            ],
+
+            "chow": [],
+
+            "clumber": [],
+
+            "cockapoo": [],
+
+            "collie": [
+
+            "border"
+
+            ],
+
+            "coonhound": [],
+
+            "corgi": [
+
+            "cardigan"
+
+            ],
+
+            "cotondetulear": [],
+
+            "dachshund": [],
+
+            "dalmatian": [],
+
+            "dane": [
+
+            "great"
+
+            ],
+
+            "danish": [
+
+            "swedish"
+
+            ],
+
+            "deerhound": [
+
+            "scottish"
+
+            ],
+
+            "dhole": [],
+
+            "dingo": [],
+
+            "doberman": [],
+
+            "elkhound": [
+
+            "norwegian"
+
+            ],
+
+            "entlebucher": [],
+
+            "eskimo": [],
+
+            "finnish": [
+
+            "lapphund"
+
+            ],
+
+            "frise": [
+
+            "bichon"
+
+            ],
+
+            "gaddi": [
+
+            "indian"
+
+            ],
+
+            "germanshepherd": [],
+
+            "greyhound": [
+
+            "indian",
+
+            "italian"
+
+            ],
+
+            "groenendael": [],
+
+            "havanese": [],
+
+            "hound": [
+
+            "afghan",
+
+            "basset",
+
+            "blood",
+
+            "english",
+
+            "ibizan",
+
+            "plott",
+
+            "walker"
+
+            ],
+
+            "husky": [],
+
+            "keeshond": [],
+
+            "kelpie": [],
+
+            "kombai": [],
+
+            "komondor": [],
+
+            "kuvasz": [],
+
+            "labradoodle": [],
+
+            "labrador": [],
+
+            "leonberg": [],
+
+            "lhasa": [],
+
+            "malamute": [],
+
+            "malinois": [],
+
+            "maltese": [],
+
+            "mastiff": [
+
+            "bull",
+
+            "english",
+
+            "indian",
+
+            "tibetan"
+
+            ],
+
+            "mexicanhairless": [],
+
+            "mix": [],
+
+            "mountain": [
+
+            "bernese",
+
+            "swiss"
+
+            ],
+
+            "mudhol": [
+
+            "indian"
+
+            ],
+
+            "newfoundland": [],
+
+            "otterhound": [],
+
+            "ovcharka": [
+
+            "caucasian"
+
+            ],
+
+            "papillon": [],
+
+            "pariah": [
+
+            "indian"
+
+            ],
+
+            "pekinese": [],
+
+            "pembroke": [],
+
+            "pinscher": [
+
+            "miniature"
+
+            ],
+
+            "pitbull": [],
+
+            "pointer": [
+
+            "german",
+
+            "germanlonghair"
+
+            ],
+
+            "pomeranian": [],
+
+            "poodle": [
+
+            "medium",
+
+            "miniature",
+
+            "standard",
+
+            "toy"
+
+            ],
+
+            "pug": [],
+
+            "puggle": [],
+
+            "pyrenees": [],
+
+            "rajapalayam": [
+
+            "indian"
+
+            ],
+
+            "redbone": [],
+
+            "retriever": [
+
+            "chesapeake",
+
+            "curly",
+
+            "flatcoated",
+
+            "golden"
+
+            ],
+
+            "ridgeback": [
+
+            "rhodesian"
+
+            ],
+
+            "rottweiler": [],
+
+            "saluki": [],
+
+            "samoyed": [],
+
+            "schipperke": [],
+
+            "schnauzer": [
+
+            "giant",
+
+            "miniature"
+
+            ],
+
+            "segugio": [
+
+            "italian"
+
+            ],
+
+            "setter": [
+
+            "english",
+
+            "gordon",
+
+            "irish"
+
+            ],
+
+            "sharpei": [],
+
+            "sheepdog": [
+
+            "english",
+
+            "indian",
+
+            "shetland"
+
+            ],
+
+            "shiba": [],
+
+            "shihtzu": [],
+
+            "spaniel": [
+
+            "blenheim",
+
+            "brittany",
+
+            "cocker",
+
+            "irish",
+
+            "japanese",
+
+            "sussex",
+
+            "welsh"
+
+            ],
+
+            "spitz": [
+
+            "indian",
+
+            "japanese"
+
+            ],
+
+            "springer": [
+
+            "english"
+
+            ],
+
+            "stbernard": [],
+
+            "terrier": [
+
+            "american",
+
+            "australian",
+
+            "bedlington",
+
+            "border",
+
+            "cairn",
+
+            "dandie",
+
+            "fox",
+
+            "irish",
+
+            "kerryblue",
+
+            "lakeland",
+
+            "norfolk",
+
+            "norwich",
+
+            "patterdale",
+
+            "russell",
+
+            "scottish",
+
+            "sealyham",
+
+            "silky",
+
+            "tibetan",
+
+            "toy",
+
+            "welsh",
+
+            "westhighland",
+
+            "wheaten",
+
+            "yorkshire"
+
+            ],
+
+            "tervuren": [],
+
+            "vizsla": [],
+
+            "waterdog": [
+
+            "spanish"
+
+            ],
+
+            "weimaraner": [],
+
+            "whippet": [],
+
+            "wolfhound": [
+
+            "irish"
+
+            ]
+
+            }
+
+            }
+
+            </breed_dictionary>
+
+
+            Now, follow these steps to process the user''s query:
+
+
+            1. Carefully read the following user input:
+
+            <user_query>
+
+            {{#1727971750540.text#}}
+
+            </user_query>
+
+
+            2. Identify any dog breeds mentioned in the user''s input by comparing
+            the words to the breed names
+
+            in the dictionary above. Be sure to check for both main breeds and sub-breeds.
+
+
+            3. For each identified breed:
+
+            a. If a sub-breed is mentioned along with a main breed, format it as "breed/sub-breed".
+            For example,
+
+            if "spaniel blenheim" is mentioned, output "spaniel/blenheim".
+
+            b. If only a main breed is mentioned, just output the breed name.
+
+
+            4. If multiple breeds are identified, separate them with commas.
+
+
+            5. If no breeds are identified, output an empty string.
+
+
+            6. Provide your final output inside <answer> tags.
+
+
+            Example outputs:
+
+            - For "I saw a spaniel blenheim and a shiba inu yesterday": <answer>spaniel/blenheim,shiba</answer>
+
+            - For "My neighbor has a golden retriever": <answer>retriever/golden</answer>
+
+            - For "I love cats": <answer></answer>
+
+
+            Remember to be thorough in your search for breed names, including partial
+            matches and variations in
+
+            spelling or word order. Your task is to identify as many valid breeds
+            as possible from the user''s
+
+            input.'
+        selected: false
+        title: 對照表中出現過的英文名稱
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 98
+      id: '1727974637433'
+      position:
+        x: 9.895361481287068
+        y: 470.85375111769315
+      positionAbsolute:
+        x: 9.895361481287068
+        y: 470.85375111769315
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(english_name: str) -> dict:\n    # 移除 <answer> 和 </answer>，並分割字串後移除空白\n\
+          \    output_list = [\n        name.strip() \n        for name in english_name.replace('<answer>',\
+          \ '').replace('</answer>', '').split(',')\n    ]\n    \n    # 若 output_list\
+          \ 中唯一的元素為空字串，則清空 output_list\n    if not output_list or output_list[0] ==\
+          \ \"\":\n        output_list = []\n\n    return {\n        \"result\": output_list,\n\
+          \    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+        selected: false
+        title: 將字串轉換成物件
+        type: code
+        variables:
+        - value_selector:
+          - '1727974637433'
+          - text
+          variable: english_name
+      height: 54
+      id: '1727975793877'
+      position:
+        x: 340.3788695805984
+        y: 494.3730878023145
+      positionAbsolute:
+        x: 340.3788695805984
+        y: 494.3730878023145
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        height: 182
+        iterator_selector:
+        - '1727975793877'
+        - result
+        output_selector:
+        - '1727976571243'
+        - url
+        output_type: array[string]
+        selected: false
+        start_node_id: 1727976152918start
+        title: 迭代每一個狗的品種
+        type: iteration
+        width: 977.4504610592036
+      height: 182
+      id: '1727976152918'
+      position:
+        x: 1061.6278911958025
+        y: 165.1023742176148
+      positionAbsolute:
+        x: 1061.6278911958025
+        y: 165.1023742176148
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 977
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1727976152918start
+      parentId: '1727976152918'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 1085.6278911958025
+        y: 233.1023742176148
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: ''
+          type: none
+        desc: ''
+        headers: ''
+        isInIteration: true
+        iteration_id: '1727976152918'
+        method: get
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP 請求狗勾照片的 url
+        type: http-request
+        url: '{{#1727976192514.result#}}'
+        variables: []
+      height: 97
+      id: '1727976183028'
+      parentId: '1727976152918'
+      position:
+        x: 413.4504610592036
+        y: 65
+      positionAbsolute:
+        x: 1475.078352255006
+        y: 230.1023742176148
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        code: "\ndef main(breed: str) -> dict:\n    url = f'https://dog.ceo/api/breed/{breed}/images/random'\n\
+          \    return {\n        \"result\": url\n    }\n"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        iteration_id: '1727976152918'
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 格式化 url
+        type: code
+        variables:
+        - value_selector:
+          - '1727976152918'
+          - item
+          variable: breed
+      height: 54
+      id: '1727976192514'
+      parentId: '1727976152918'
+      position:
+        x: 127.03003073728024
+        y: 68
+      positionAbsolute:
+        x: 1188.6579219330827
+        y: 233.1023742176148
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        code: "import json\n\ndef main(response: str) -> dict:\n\tobj = json.loads(response)\n\
+          \turl = obj['message']\n\treturn {\n\t\t\"url\": url\n\t}"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        iteration_id: '1727976152918'
+        outputs:
+          url:
+            children: null
+            type: string
+        selected: false
+        title: 取出狗狗 url
+        type: code
+        variables:
+        - value_selector:
+          - '1727976183028'
+          - body
+          variable: response
+      height: 54
+      id: '1727976571243'
+      parentId: '1727976152918'
+      position:
+        x: 717
+        y: 65.83896717887
+      positionAbsolute:
+        x: 1778.6278911958025
+        y: 230.9413413964848
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 64f5c047-862d-4d30-a77a-de871b1c6336
+            value: ''
+            varType: array[string]
+            variable_selector:
+            - '1727975793877'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 條件分支
+        type: if-else
+      height: 126
+      id: '1727976883851'
+      position:
+        x: 723.0406313654769
+        y: 360.17451966065124
+      positionAbsolute:
+        x: 723.0406313654769
+        y: 360.17451966065124
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "\ndef main() -> dict:\n    return {\n        \"result\": [],\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+        selected: false
+        title: 輸出 empty list
+        type: code
+        variables: []
+      height: 54
+      id: '1727977038273'
+      position:
+        x: 1369.0041433650174
+        y: 579.2863174710476
+      positionAbsolute:
+        x: 1369.0041433650174
+        y: 579.2863174710476
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        output_type: array[string]
+        selected: false
+        title: 變量聚合器
+        type: variable-aggregator
+        variables:
+        - - '1727976152918'
+          - output
+        - - '1727977038273'
+          - result
+      height: 139
+      id: '1727977349441'
+      position:
+        x: 2212.9833381832204
+        y: 412.0368638132434
+      positionAbsolute:
+        x: 2212.9833381832204
+        y: 412.0368638132434
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 28.238946071360715
+      y: 162.76331876661482
+      zoom: 0.5227013120231767
